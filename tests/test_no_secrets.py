@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -72,3 +73,45 @@ def test_source_has_no_credentials_or_machine_paths():
             if pattern.search(text):
                 hits.append(f"{path.relative_to(ROOT)}: {pattern.pattern}")
     assert hits == []
+
+
+MUST_IGNORE = [
+    ".env",
+    ".env.local",
+    ".env.production",
+    "local.env",
+    "session/account.cookiejar",
+    "session/account.session",
+    "cookies/account.cookiejar",
+    "account.cookiejar",
+    "account.session",
+    "downloads/file.pdf",
+    "cookies.txt",
+    "id_rsa",
+    "id_ed25519",
+    "cert.pem",
+    "auth.p12",
+    "secrets.yaml",
+    "credentials.json",
+]
+
+
+def test_gitignore_covers_secret_filenames():
+    listed = subprocess.run(
+        ["git", "-C", str(ROOT), "check-ignore", "--stdin"],
+        input="\n".join(MUST_IGNORE) + "\n",
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    ignored = {line for line in listed.stdout.splitlines() if line}
+    missing = [path for path in MUST_IGNORE if path not in ignored]
+    assert missing == [], f"gitignore missed: {missing}"
+
+    example = subprocess.run(
+        ["git", "-C", str(ROOT), "check-ignore", ".env.example"],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    assert example.returncode == 1, ".env.example must stay tracked"

@@ -4,19 +4,53 @@
 # Secrets and local auth — never commit
 .env
 .env.*
+.env_*
+*.env
 !.env.example
 .envrc
+.flaskenv
+.netrc
+.pypirc
+
+# pyicloud writes <apple-id>.cookiejar and <apple-id>.session
+# inside ICLOUD_SESSION_DIR (defaults off-repo under XDG).
 session/
+cookies/
+cookiejar/
 *.cookiejar
 *.session
-*.pem
-*.key
-*.p12
+*.cookies
+*.cookie
 cookies.txt
 
-# Downloaded iCloud files
+# Keys / certs that sometimes land next to a login helper
+*.pem
+*.key
+*.p8
+*.p12
+*.pfx
+*.p7b
+*.keystore
+id_rsa
+id_ed25519
+id_ecdsa
+
+# Generic secret filenames
+*.secret
+*.secrets
+secrets.yaml
+secrets.yml
+credentials.json
+auth.json
+
+# Downloaded iCloud files (ICLOUD_DOWNLOAD_DIR override)
 downloads/
 state/
+cache/
+
+# If someone points XDG_* or session/download dirs at the repo
+.local/
+.cache/
 
 # Python
 __pycache__/
@@ -39,3 +73,4 @@ htmlcov/
 .vscode/
 *.swp
 .DS_Store
+Thumbs.db
