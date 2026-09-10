@@ -1,0 +1,54 @@
+{
+  "manifest_version": "0.4",
+  "name": "icloud-docs-mcp",
+  "display_name": "iCloud Drive Docs",
+  "version": "0.1.0",
+  "description": "Read-only MCP server for listing, searching, downloading, and reading iCloud Drive documents.",
+  "author": {
+    "name": "js713-lab",
+    "url": "https://github.com/js713-lab/icloud4u-mcp"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/js713-lab/icloud4u-mcp"
+  },
+  "server": {
+    "type": "uv",
+    "entry_point": "src/icloud_docs_mcp/__main__.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": ["run", "--directory", "${__dirname}", "icloud-docs-mcp"],
+      "env": {
+        "ICLOUD_USERNAME": "${user_config.icloud_username}",
+        "ICLOUD_ROOT": "${user_config.icloud_root}"
+      }
+    }
+  },
+  "tools": [
+    { "name": "status", "description": "Check whether the Apple ID session is trusted and iCloud Drive is reachable." },
+    { "name": "list_folder", "description": "List one iCloud Drive folder (not recursive)." },
+    { "name": "search", "description": "Search Drive filenames and paths." },
+    { "name": "download", "description": "Download Drive files to the local cache directory." },
+    { "name": "read_text", "description": "Download a Drive file if needed and return extracted text." }
+  ],
+  "user_config": {
+    "icloud_username": {
+      "type": "string",
+      "title": "Apple ID",
+      "description": "Apple ID used to access iCloud Drive. There is no default.",
+      "required": true
+    },
+    "icloud_root": {
+      "type": "string",
+      "title": "Drive folder prefix",
+      "description": "Optional Drive folder prefix. All tools are scoped under it.",
+      "required": false
+    }
+  },
+  "compatibility": {
+    "platforms": ["darwin", "linux", "win32"],
+    "runtimes": { "python": ">=3.10" }
+  },
+  "keywords": ["mcp", "icloud", "icloud-drive", "documents"]
+}

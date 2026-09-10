@@ -60,6 +60,7 @@ __pycache__/
 .eggs/
 dist/
 build/
+*.mcpb
 .venv/
 venv/
 .pytest_cache/

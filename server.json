@@ -10,9 +10,9 @@
   "version": "0.1.0",
   "packages": [
     {
-      "registryType": "pypi",
-      "identifier": "icloud-docs-mcp",
-      "version": "0.1.0",
+      "registryType": "mcpb",
+      "identifier": "https://github.com/js713-lab/icloud4u-mcp/releases/download/v0.1.0/icloud-docs-mcp-0.1.0.mcpb",
+      "fileSha256": "f51abc3303f5ca5b7c2c08f0f9c2449929c3e0fe152e1d639a7e641aceece426",
       "transport": {
         "type": "stdio"
       },

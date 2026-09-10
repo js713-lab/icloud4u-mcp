@@ -39,6 +39,12 @@ source .venv/bin/activate
 pip install -e .
 ```
 
+Install from GitHub:
+
+```bash
+pip install git+https://github.com/js713-lab/icloud4u-mcp.git
+```
+
 Or, once the package is on PyPI:
 
 ```bash
