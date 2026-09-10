@@ -9,3 +9,4 @@
 - Public GitHub repo: [js713-lab/icloud4u-mcp](https://github.com/js713-lab/icloud4u-mcp).
 - MCP registry metadata in `server.json` (`io.github.js713-lab/icloud-docs-mcp`).
 - Grok/Claude plugin stub in `.mcp.json`.
+- Tag `v*` publishes to PyPI and the MCP Registry (see `PUBLISH.md`).

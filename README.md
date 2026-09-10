@@ -140,6 +140,8 @@ grok plugin install js713-lab/icloud4u-mcp --trust
 
 That only starts the server. You still need `pip install icloud-docs-mcp` (or `pip install -e .`) and `icloud-docs-mcp login` on the machine.
 
+To publish a release to PyPI and the official MCP Registry, see [PUBLISH.md](PUBLISH.md).
+
 ## Development
 
 ```bash
