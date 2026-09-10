@@ -4,7 +4,7 @@
 
 Read-only [Model Context Protocol](https://modelcontextprotocol.io/) server for **iCloud Drive**.
 
-Source: [js713-lab/sonic-match-mcp](https://github.com/js713-lab/sonic-match-mcp). The installable package and CLI are named `icloud-docs-mcp`.
+Source: [js713-lab/icloud4u-mcp](https://github.com/js713-lab/icloud4u-mcp). The installable package and CLI are named `icloud-docs-mcp`.
 
 It lists a folder, searches by filename, downloads files, and extracts text from common documents. There is no default Apple ID, no bundled documents, and no company-specific search logic.
 
@@ -32,8 +32,8 @@ Python 3.10+
 From this repository:
 
 ```bash
-git clone https://github.com/js713-lab/sonic-match-mcp.git
-cd sonic-match-mcp
+git clone https://github.com/js713-lab/icloud4u-mcp.git
+cd icloud4u-mcp
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e .
@@ -135,7 +135,7 @@ Use an absolute path to the venv binary if the client does not inherit your `PAT
 Grok can also load `.mcp.json` from this repo:
 
 ```bash
-grok plugin install js713-lab/sonic-match-mcp --trust
+grok plugin install js713-lab/icloud4u-mcp --trust
 ```
 
 That only starts the server. You still need `pip install icloud-docs-mcp` (or `pip install -e .`) and `icloud-docs-mcp login` on the machine.

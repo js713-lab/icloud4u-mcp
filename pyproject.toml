@@ -30,10 +30,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/js713-lab/sonic-match-mcp"
-Repository = "https://github.com/js713-lab/sonic-match-mcp"
-Issues = "https://github.com/js713-lab/sonic-match-mcp/issues"
-Changelog = "https://github.com/js713-lab/sonic-match-mcp/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/js713-lab/icloud4u-mcp"
+Repository = "https://github.com/js713-lab/icloud4u-mcp"
+Issues = "https://github.com/js713-lab/icloud4u-mcp/issues"
+Changelog = "https://github.com/js713-lab/icloud4u-mcp/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]

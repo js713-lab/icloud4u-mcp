@@ -4,7 +4,7 @@
   "title": "iCloud Drive Docs",
   "description": "Read-only MCP server for listing, searching, downloading, and reading iCloud Drive documents.",
   "repository": {
-    "url": "https://github.com/js713-lab/sonic-match-mcp",
+    "url": "https://github.com/js713-lab/icloud4u-mcp",
     "source": "github"
   },
   "version": "0.1.0",
