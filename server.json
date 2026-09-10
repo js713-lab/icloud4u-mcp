@@ -1,0 +1,37 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.js713-lab/icloud-docs-mcp",
+  "title": "iCloud Drive Docs",
+  "description": "Read-only MCP server for listing, searching, downloading, and reading iCloud Drive documents.",
+  "repository": {
+    "url": "https://github.com/js713-lab/sonic-match-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "icloud-docs-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "ICLOUD_USERNAME",
+          "description": "Apple ID. There is no default.",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": false
+        },
+        {
+          "name": "ICLOUD_ROOT",
+          "description": "Optional Drive folder prefix. All tools are scoped under it.",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}

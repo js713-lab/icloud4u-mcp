@@ -1,8 +1,10 @@
 # icloud-docs-mcp
 
-> GitHub: [js713-lab/icloud4u-mcp](https://github.com/js713-lab/icloud4u-mcp)
+<!-- mcp-name: io.github.js713-lab/icloud-docs-mcp -->
 
 Read-only [Model Context Protocol](https://modelcontextprotocol.io/) server for **iCloud Drive**.
+
+Source: [js713-lab/sonic-match-mcp](https://github.com/js713-lab/sonic-match-mcp). The installable package and CLI are named `icloud-docs-mcp`.
 
 It lists a folder, searches by filename, downloads files, and extracts text from common documents. There is no default Apple ID, no bundled documents, and no company-specific search logic.
 
@@ -27,10 +29,20 @@ The `status` tool returns the configured Apple ID and local cache paths so a cli
 
 Python 3.10+
 
+From this repository:
+
 ```bash
+git clone https://github.com/js713-lab/sonic-match-mcp.git
+cd sonic-match-mcp
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e .
+```
+
+Or, once the package is on PyPI:
+
+```bash
+pip install icloud-docs-mcp
 ```
 
 Copy `.env.example` to `.env` and set `ICLOUD_USERNAME` to your Apple ID. `.env` is gitignored.
@@ -119,6 +131,14 @@ tool_timeouts = { search = 180, download = 300, read_text = 180 }
 ```
 
 Use an absolute path to the venv binary if the client does not inherit your `PATH`.
+
+Grok can also load `.mcp.json` from this repo:
+
+```bash
+grok plugin install js713-lab/sonic-match-mcp --trust
+```
+
+That only starts the server. You still need `pip install icloud-docs-mcp` (or `pip install -e .`) and `icloud-docs-mcp login` on the machine.
 
 ## Development
 

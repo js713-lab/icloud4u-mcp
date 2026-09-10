@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "icloud_docs": {
+      "command": "icloud-docs-mcp",
+      "env": {
+        "ICLOUD_USERNAME": "${ICLOUD_USERNAME}"
+      }
+    }
+  }
+}

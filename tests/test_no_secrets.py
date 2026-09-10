@@ -28,6 +28,7 @@ SCAN_SUFFIXES = {
     ".example",
     ".gitignore",
     ".in",
+    ".json",
 }
 SCAN_NAMES = {
     "LICENSE",
