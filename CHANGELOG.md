@@ -4,6 +4,7 @@
 
 - README banner (`docs/banner.jpg`).
 - Session and download directories are created with mode `0700`.
+- Positioned as a cross-platform Drive utility (no Mac required), not a hosted product. Unofficial `pyicloud` reliability is called out as a hard limit.
 
 ## 0.1.0
 

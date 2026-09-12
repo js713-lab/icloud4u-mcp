@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.js713-lab/icloud-docs-mcp",
   "title": "iCloud Drive Docs",
-  "description": "Read-only MCP server for listing, searching, downloading, and reading iCloud Drive documents.",
+  "description": "Find a PDF in iCloud Drive and read it. Cross-platform, read-only, unofficial.",
   "repository": {
     "url": "https://github.com/js713-lab/icloud4u-mcp",
     "source": "github"

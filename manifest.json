@@ -3,7 +3,7 @@
   "name": "icloud-docs-mcp",
   "display_name": "iCloud Drive Docs",
   "version": "0.1.0",
-  "description": "Read-only MCP server for listing, searching, downloading, and reading iCloud Drive documents.",
+  "description": "Find a PDF in iCloud Drive and read it. Cross-platform, read-only, unofficial.",
   "author": {
     "name": "js713-lab",
     "url": "https://github.com/js713-lab/icloud4u-mcp"

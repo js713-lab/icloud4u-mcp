@@ -6,20 +6,30 @@
   <img src="docs/banner.jpg" alt="iCloud Drive Docs — read-only MCP. List, Search, Download, Read." width="100%">
 </p>
 
-Read-only [Model Context Protocol](https://modelcontextprotocol.io/) server for **iCloud Drive**.
+Your agent can find a PDF in iCloud Drive and quote page 3.
+
+Read-only [Model Context Protocol](https://modelcontextprotocol.io/) server for **iCloud Drive**. Linux, Windows, or macOS — no Mac, no Spotlight, no `~/Library` required.
 
 Source: [js713-lab/icloud4u-mcp](https://github.com/js713-lab/icloud4u-mcp). The installable package and CLI are named `icloud-docs-mcp`.
 
+Mail / Calendar / Contacts MCPs already exist. Drive is still the weak spot in the Apple stack if you are not on a Mac. That is the wedge: **cross-platform Drive without needing a Mac.** It is a utility, not a category.
+
 It lists a folder, searches by filename, downloads files, and extracts text from common documents. There is no default Apple ID, no bundled documents, and no company-specific search logic.
 
-Apple does not publish a third-party iCloud Drive API. This server uses the unofficial [`pyicloud`](https://github.com/picklepete/pyicloud) library. Apple can change endpoints without notice.
+Apple does not publish a third-party iCloud Drive API. This server uses the unofficial [`pyicloud`](https://github.com/picklepete/pyicloud) library. You do not own that pipe. Apple can change an endpoint and this tool is down until someone reverse-engineers it again. Do not promise reliability this repo does not control.
+
+Example:
+
+> Find the invoice in iCloud Drive and quote page 3.
 
 ## What it is not
 
 - Not Mail, Calendar, Contacts, or Notes
+- Not a macOS-local Drive MCP (those already use Spotlight / `~/Library`)
 - Not a hosted / HTTP MCP (it runs locally over stdio)
 - Not a 2FA prompt inside the model session
 - Not upload, rename, or delete
+- Not a reliability SLA. The unofficial client will break.
 
 ## Disclaimer
 

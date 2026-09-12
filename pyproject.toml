@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "icloud-docs-mcp"
 version = "0.1.0"
-description = "Read-only MCP server for listing, searching, downloading, and reading iCloud Drive documents."
+description = "Find a PDF in iCloud Drive and read it. Cross-platform, read-only, unofficial."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }

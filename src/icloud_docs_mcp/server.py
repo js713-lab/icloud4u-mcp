@@ -19,10 +19,13 @@ LOGGER = logging.getLogger(__name__)
 mcp = MCPServer(
     "icloud-docs",
     instructions=(
-        "Read-only access to the user's iCloud Drive. Use status first if a tool "
-        "returns NEED_LOGIN or NEED_2FA — the user must run `icloud-docs-mcp login` "
-        "in a terminal. Prefer search over recursive listing. Do not request a "
-        "password or 2FA code through these tools."
+        "Read-only access to the user's iCloud Drive so an agent can find a "
+        "document and quote it (search → download / read_text). Works without a "
+        "Mac. Use status first if a tool returns NEED_LOGIN or NEED_2FA — the "
+        "user must run `icloud-docs-mcp login` in a terminal. Prefer search over "
+        "recursive listing. Do not request a password or 2FA code through these "
+        "tools. This uses unofficial pyicloud; Apple can change endpoints without "
+        "notice."
     ),
 )
 
