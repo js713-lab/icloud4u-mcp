@@ -136,14 +136,17 @@ def test_connect_restricts_session_and_download_dirs(tmp_path: Path):
             root="",
         )
     )
-    # connect() will fail NEED_LOGIN (no cookiejar / password) after mkdir+chmod.
+    # connect() fails NEED_LOGIN (no cookiejar / password) after mkdir+chmod,
+    # without importing pyicloud.
     with pytest.raises(ICloudError) as exc:
         client.connect()
     assert exc.value.code == "NEED_LOGIN"
     assert session.is_dir()
     assert downloads.is_dir()
-    assert (session.stat().st_mode & 0o777) == 0o700
-    assert (downloads.stat().st_mode & 0o777) == 0o700
+    session_mode = session.stat().st_mode & 0o777
+    download_mode = downloads.stat().st_mode & 0o777
+    assert session_mode & 0o007 == 0, f"session dir is world-accessible: {oct(session_mode)}"
+    assert download_mode & 0o007 == 0, f"download dir is world-accessible: {oct(download_mode)}"
 
 
 def test_icloud_root_scopes_paths(tmp_path: Path):

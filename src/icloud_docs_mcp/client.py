@@ -71,18 +71,18 @@ class DriveClient:
         except OSError:
             LOGGER.warning("Could not restrict session/download directory permissions")
 
-        from pyicloud import PyiCloudService
-        from pyicloud.exceptions import (
-            PyiCloudAPIResponseException,
-            PyiCloudFailedLoginException,
-        )
-
         has_session = any(self.settings.session_dir.iterdir())
         if not has_session and not self.settings.password:
             raise ICloudError(
                 "NEED_LOGIN",
                 "No local session. Run `icloud-docs-mcp login` in a terminal.",
             )
+
+        from pyicloud import PyiCloudService
+        from pyicloud.exceptions import (
+            PyiCloudAPIResponseException,
+            PyiCloudFailedLoginException,
+        )
 
         try:
             api = PyiCloudService(
