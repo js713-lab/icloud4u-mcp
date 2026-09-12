@@ -64,7 +64,12 @@ class DriveClient:
         username = self.settings.require_username()
         self._disable_keyring()
         self.settings.session_dir.mkdir(parents=True, exist_ok=True)
-        os.chmod(self.settings.session_dir, 0o700)
+        self.settings.download_dir.mkdir(parents=True, exist_ok=True)
+        try:
+            os.chmod(self.settings.session_dir, 0o700)
+            os.chmod(self.settings.download_dir, 0o700)
+        except OSError:
+            LOGGER.warning("Could not restrict session/download directory permissions")
 
         from pyicloud import PyiCloudService
         from pyicloud.exceptions import (

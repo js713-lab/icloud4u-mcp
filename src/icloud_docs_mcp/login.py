@@ -38,7 +38,10 @@ def login(
         return 1
 
     settings.session_dir.mkdir(parents=True, exist_ok=True)
-    os.chmod(settings.session_dir, 0o700)
+    try:
+        os.chmod(settings.session_dir, 0o700)
+    except OSError:
+        stderr.write("Warning: could not restrict session directory permissions.\n")
 
     from pyicloud import PyiCloudService
     from pyicloud.exceptions import (

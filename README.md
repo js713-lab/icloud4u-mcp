@@ -2,6 +2,10 @@
 
 <!-- mcp-name: io.github.js713-lab/icloud-docs-mcp -->
 
+<p align="center">
+  <img src="docs/banner.jpg" alt="iCloud Drive Docs — read-only MCP. List, Search, Download, Read." width="100%">
+</p>
+
 Read-only [Model Context Protocol](https://modelcontextprotocol.io/) server for **iCloud Drive**.
 
 Source: [js713-lab/icloud4u-mcp](https://github.com/js713-lab/icloud4u-mcp). The installable package and CLI are named `icloud-docs-mcp`.

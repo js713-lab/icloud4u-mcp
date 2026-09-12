@@ -124,6 +124,28 @@ def test_download_and_read_text(tmp_path: Path):
     assert payload["truncated"] is False
 
 
+def test_connect_restricts_session_and_download_dirs(tmp_path: Path):
+    session = tmp_path / "session"
+    downloads = tmp_path / "downloads"
+    client = DriveClient(
+        Settings(
+            username="user@example.com",
+            password=None,
+            session_dir=session,
+            download_dir=downloads,
+            root="",
+        )
+    )
+    # connect() will fail NEED_LOGIN (no cookiejar / password) after mkdir+chmod.
+    with pytest.raises(ICloudError) as exc:
+        client.connect()
+    assert exc.value.code == "NEED_LOGIN"
+    assert session.is_dir()
+    assert downloads.is_dir()
+    assert (session.stat().st_mode & 0o777) == 0o700
+    assert (downloads.stat().st_mode & 0o777) == 0o700
+
+
 def test_icloud_root_scopes_paths(tmp_path: Path):
     client = _client(tmp_path, root="Documents")
     names = [item.name for item in client.list_folder("")]

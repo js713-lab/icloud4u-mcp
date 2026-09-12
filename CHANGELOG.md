@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- README banner (`docs/banner.jpg`).
+- Session and download directories are created with mode `0700`.
+
 ## 0.1.0
 
 - Initial public release: read-only iCloud Drive MCP server.

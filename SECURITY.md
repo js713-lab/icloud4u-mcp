@@ -27,4 +27,5 @@ Include reproduction steps and affected versions. Redact Apple IDs if you can.
 
 - The MCP server is stdio-only. Do not bind it to HTTP or share one session across users.
 - Tools are read-only (list, search, download, extract). They do not upload, rename, or delete Drive files.
+- Session and download directories are created with mode `0700` when the filesystem allows it. A cookiejar is equivalent to being logged in.
 - `status` returns the configured username and local directories. That is intentional and is not a password leak.
