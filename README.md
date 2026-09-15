@@ -174,3 +174,4 @@ Tests mock Apple. CI must never log into iCloud. See [CONTRIBUTING.md](CONTRIBUT
 ## License
 
 MIT. Security reports: [SECURITY.md](SECURITY.md).
+
