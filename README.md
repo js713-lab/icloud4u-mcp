@@ -175,3 +175,7 @@ Tests mock Apple. CI must never log into iCloud. See [CONTRIBUTING.md](CONTRIBUT
 
 MIT. Security reports: [SECURITY.md](SECURITY.md).
 
+
+---
+
+Maintained by [CodeCrafter](https://www.codecrafter.dev/) · contact [hong@codecrafter.dev](mailto:hong@codecrafter.dev).
