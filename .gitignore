@@ -75,3 +75,6 @@ htmlcov/
 *.swp
 .DS_Store
 Thumbs.db
+.env.bak*
+.env*.local
+.env.local
